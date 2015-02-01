@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo " Script de compilação"
-echo " By Pacman Pereira ...................... 2015 - 01 - 07"
 echo "========================================================="
 echo "           "
 echo "                        O O O"
@@ -28,13 +26,3 @@ echo "  |      |   | |   | | |     |    | |    |   |  |   |"
 echo "   ^^^^^  ^^^   ^^^     ^^^   ^^^^   ^^^  ^^^  ^     ^"
 echo "======================================================="
 echo ""
-
-gcc -o main main.c virtualscreen.c vector.c dda.c context.c
-
-if [ $? -ne 0 ]
-then
-    echo "Compile failed!"
-    exit 1
-else
-    echo "Compile succeeded without warnings"
-fi
