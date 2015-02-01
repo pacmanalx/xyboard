@@ -45,7 +45,7 @@
 // ===================================================================
 // Entry point of program
 // ===================================================================
-void main(void) {
+int main(int argc, char *argv[]) {
 	unsigned long i;
 
 	// Initialize virtual screen
