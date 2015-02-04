@@ -31,6 +31,7 @@
 
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 #include "virtualscreen.h"
 #include "vector.h"
 #include "dda.h"
@@ -39,14 +40,29 @@
 // ===================================================================
 // Configure output Debug
 // ===================================================================
-#define DUMP_VIRTUAL_SCREEN 1
-#define DUMP_CURSOR         1
+#define DUMP_VIRTUAL_SCREEN 0
+#define DUMP_CURSOR         0
+
+// ===================================================================
+// Variables for filename and parameter list
+// ===================================================================
+char filename[160];
 
 // ===================================================================
 // Entry point of program
 // ===================================================================
 int main(int argc, char *argv[]) {
 	unsigned long i;
+
+	printf("%d\r\n",argc); 
+
+	if(argc==1) {
+		printf("Idiot code: pass the parameter corretly!i\r\n");
+		return(1);
+	}
+
+	sprintf(filename,"%s",argv[1]);
+	printf("%s\n\r", filename);
 
 	// Initialize virtual screen
 	VsInit(100,100);
