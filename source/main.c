@@ -40,8 +40,8 @@
 // ===================================================================
 // Configure output Debug
 // ===================================================================
-#define DUMP_VIRTUAL_SCREEN 0
-#define DUMP_CURSOR         0
+#define DUMP_VIRTUAL_SCREEN 1
+#define DUMP_CURSOR         1
 
 // ===================================================================
 // Variables for filename and parameter list
