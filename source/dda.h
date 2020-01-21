@@ -48,4 +48,7 @@
 void DdaDrawLine(unsigned long x1, unsigned long y1, 
 	      unsigned long x2, unsigned long y2);
 
+void Dda3DDrawLine(unsigned long x1, unsigned long y1, unsigned long z1,
+	      unsigned long x2, unsigned long y2, unsigned long z2);
+
 #endif

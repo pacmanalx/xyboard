@@ -75,3 +75,49 @@ void DdaDrawLine(unsigned long x1, unsigned long y1,
 	}
 }
 
+void Dda3DDrawLine(unsigned long x1, unsigned long y1, unsigned long z1,
+	      unsigned long x2, unsigned long y2, unsigned long z2) {
+	float x;
+	float y;
+	float z;
+	float length;
+	float deltax;
+	float deltay;
+	float deltaz;
+	float i;
+	long dX;
+	long dY;
+	long dZ;
+
+	dX = (x2-x1);
+	dY = (y2-y1);
+	dZ = (z2-z1);
+
+	// -------------------------------------------
+	// lenght can be a greater coordinate Delta
+	// -------------------------------------------
+	if( ABS(dX) >= ABS(dY)) {
+		length = (float)ABS(dX);
+	} else {
+		length = (float)ABS(dY);
+	}
+	if( ABS(dZ) >= length) {
+		length = (float)ABS(dZ);
+	} 
+	// -------------------------------------------
+
+	deltax = (float) (dX) / (float) length;
+	deltay = (float) (dY) / (float) length;
+	deltaz = (float) (dZ) / (float) length;
+	x = x1 + 0.5 * SIGN(deltax);
+	y = y1 + 0.5 * SIGN(deltay);
+	z = z1 + 0.5 * SIGN(deltaz);
+
+	for (i = 0; i < length; i++) {
+		VsSetPoint( FLOOR(x), FLOOR(y), 'X') ;
+		VecAddStep( FLOOR(x), FLOOR(y));
+		x += deltax;
+		y += deltay;
+		z += deltaz;
+	}
+}
