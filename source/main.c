@@ -41,7 +41,7 @@
 // Configure output Debug
 // ===================================================================
 #define DUMP_VIRTUAL_SCREEN 1
-#define DUMP_CURSOR         1
+#define DUMP_CURSOR         0
 
 // ===================================================================
 // Variables for filename and parameter list
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
 	printf("%d\r\n",argc); 
 
 	if(argc==1) {
-		printf("Idiot code: pass the parameter corretly!i\r\n");
+		printf("Idiot code: pass the parameter corretly!\r\n");
 		return(1);
 	}
 
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
 	printf("%s\n\r", filename);
 
 	// Initialize virtual screen
-	VsInit(100,100);
+	VsInit(100,50);
 
 	// Variable defined in vector.h, denotes the step point in stepCol collection
 	stepCount=1;
@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
 	vecLastY=0;
 
 	// Draw the lines on virtual screen
-	DdaDrawLine(25,25,49,49);
+	DdaDrawLine(25,25,85,50);
 	DdaDrawLine(10,40,90,10);
 
 	// Dump the virtual screen or/and calculated vectors
